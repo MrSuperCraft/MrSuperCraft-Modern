@@ -4,15 +4,32 @@
 
 <section
   class="relative h-screen flex items-center justify-center bg-cover bg-center"
-  style="background-image: url('../images/Website3-1200px.png');"
+  style="background-image: url('../images/Website3-1200px.png'); "
 >
-  <div class="absolute inset-0 backdrop-filter backdrop-blur-sm"></div>
+  <!-- Black overlay with low opacity and Gaussian blur -->
+  <div
+    class="absolute inset-0 backdrop-filter backdrop-blur-sm bg-black"
+    style="opacity: 0.03;"
+  >
+  </div>
+
+  <!-- Content container -->
   <div class="text-center text-white z-10 relative -mt-40">
-    <h1 class="text-4xl md:text-8xl font-bold mb-4">MrSuperCraft</h1>
-    <p class="text-lg md:text-3xl mb-20 mt-6">Captivating Music for the Soul</p>
+    <h1
+      class="font-bold mb-4 text-3xl md:text-7xl sm:text-5xl"
+      style="text-shadow: 1px 1px 10px rgba(0,0,0,0.8);"
+    >
+      MrSuperCraft
+    </h1>
+    <p
+      class="mb-20 mt-6 text-1xl md:text-5xl sm:text-3xl font-robto"
+      style="text-shadow: 1px 1px 10px rgba(0,0,0,0.8)"
+    >
+      Captivating Music for the Soul
+    </p>
     <a
       href="#"
-      class="bg-transparent border border-white text-3xl font-semibold text-white py-6 px-8 mt-10 rounded-full
+      class="bg-transparent border border-white max-md:text-xl -mt-10 py-6 px-8 text-3xl font-semibold text-white md:mt-10 rounded-full
        hover:bg-white hover:text-blue-900 transition duration-300"
       >Explore & Discover</a
     >
