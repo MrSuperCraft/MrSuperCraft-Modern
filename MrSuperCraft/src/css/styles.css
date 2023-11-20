@@ -3,3 +3,51 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.shadow {
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .dark-mode-switch-label {
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    position: relative;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .dark-mode-switch-label:after {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    transition: transform 0.3s ease;
+  }
+  
+  #darkModeToggle:checked + .dark-mode-switch-label {
+    background-color: #636363; /* Dark background color when switched on */
+  }
+  
+  #darkModeToggle:checked + .dark-mode-switch-label:after {
+    transform: translateX(20px); /* Move the circle to the right when switched on */
+  }
