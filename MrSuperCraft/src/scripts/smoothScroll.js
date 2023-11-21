@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (event) {
-      var target = document.querySelector(this.getAttribute('href'));
+      var targetId = this.getAttribute('href').substring(1);
+      var target = document.getElementById(targetId);
 
       if (target) {
         event.preventDefault();
 
-        var hash = this.hash;
         var targetPosition = target.getBoundingClientRect().top + window.scrollY;
         var startPosition = window.pageYOffset;
         var distance = targetPosition - startPosition;
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (progress < 800) {
             requestAnimationFrame(animateScroll);
           } else {
-            window.location.hash = hash;
+            window.location.hash = targetId; // Use targetId instead of hash
           }
         }
 
@@ -34,4 +34,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
