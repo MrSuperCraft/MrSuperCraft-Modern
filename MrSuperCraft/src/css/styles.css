@@ -13,41 +13,11 @@
     text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.8);
 }
 
-.dark-mode-switch {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .dark-mode-switch-label {
-    width: 40px;
-    height: 20px;
-    background-color: #ccc;
-    border-radius: 10px;
-    position: relative;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  
-  .dark-mode-switch-label:after {
-    content: '';
-    width: 18px;
-    height: 18px;
-    background-color: #fff;
-    border-radius: 50%;
-    position: absolute;
-    left: 2px;
-    top: 2px;
-    transition: transform 0.3s ease;
-  }
-  
-  #darkModeToggle:checked + .dark-mode-switch-label {
-    background-color: #636363; /* Dark background color when switched on */
-  }
-  
-  #darkModeToggle:checked + .dark-mode-switch-label:after {
-    transform: translateX(20px); /* Move the circle to the right when switched on */
-  }
+/* Add this to your CSS */
+.dark #theme-toggle-light-icon {
+  display: none;
+}
+
+:not(.dark) #theme-toggle-dark-icon {
+  display: none;
+}
