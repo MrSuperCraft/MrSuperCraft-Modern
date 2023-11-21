@@ -33,5 +33,11 @@ export default {
   plugins: [
     require('flowbite/plugin')
   ],
+
+  variants: {
+    extend: {
+      scale: ['hover'],
+    }
+  }
 }
 
