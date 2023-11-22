@@ -2,44 +2,52 @@
 
 ---
 
-<div class="audio-player p-4 bg-gray-800 rounded-md">
+<div
+  class="audio-player p-4 bg-gray-800 dark:bg-gray-700 rounded-md transition-all duration-300 ease-in-out"
+>
   <img
     src=""
     alt="Cover Art"
     id="cover-art"
-    class="mb-4 rounded-lg w-32 h-32 object-cover"
+    class="mb-4 rounded-lg w-32 h-32 object-cover hover:scale-110 duration-500"
   />
   <div class="ml-4">
-    <p id="artist-name" class="text-white text-sm"></p>
-    <p id="song-title" class="text-white font-bold text-lg"></p>
+    <p id="artist-name" class="text-white dark:text-gray-300 text-sm"></p>
+    <p id="song-title" class="text-white dark:text-gray-300 font-bold text-lg">
+    </p>
   </div>
   <br />
   <audio id="audio" src=""></audio>
   <div class="controls flex items-center justify-between">
     <button
       id="skip"
-      class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md"
+      class="bg-gray-600 dark:bg-gray-500 hover:bg-gray-700 dark:hover:bg-gray-600 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-md transition-all duration-300 ease-in-out"
       >Skip</button
     >
     <button
       id="shuffle"
-      class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md ml-2"
+      class="bg-gray-600 dark:bg-gray-500 hover:bg-gray-700 dark:hover:bg-gray-600 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-md ml-2 transition-all duration-300 ease-in-out"
       >Shuffle Off</button
     >
     <div class="flex items-center space-x-4">
       <button
         id="play-pause"
-        class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
+        class="bg-blue-500 dark:bg-blue-400 hover:bg-blue-800 dark:hover:bg-blue-500 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-md transition-all duration-300 ease-in-out"
         >Play</button
       >
-      <input type="range" id="volume" class="ml-4" value="100" />
+      <input
+        type="range"
+        id="volume"
+        class="ml-2 sm:ml-4 w-20 sm:w-32 md:w-48 lg:w-64 xl:w-80"
+        value="100"
+      />
     </div>
   </div>
   <div class="progress-bar mt-4 w-full">
     <input
       type="range"
       id="progress"
-      class="bg-blue-500 h-2 w-full"
+      class="bg-blue-500 dark:bg-blue-400 h-2 w-full transition-all duration-300 ease-in-out"
       value="0"
       min="0"
       max="100"
