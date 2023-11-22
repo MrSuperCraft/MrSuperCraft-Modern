@@ -10,16 +10,82 @@ const songTitle = document.getElementById('song-title');
 
 const audioList = [
   {
-    src: "../audio/Endless Tide.mp3",
-    coverArt: "../images/coverart/feelingsAlbum.png",
-    artistName: "Artist 1",
-    songTitle: "Endless Tide",
+    src: "../audio/1. Mind Palace.wav",
+    coverArt: "../images/coverart/mindPalace.png",
+    artistName: "MrSuperCraft, Brunch Collect",
+    songTitle: "Mind Palace",
   },
   {
-    src: "../audio/Elevator Music.mp3",
-    coverArt: "../images/coverart/Memories Of You.png",
-    artistName: "Artist 2",
-    songTitle: "Elevator Music",
+    src: "../audio/2. Midnight Contemplation.wav",
+    coverArt: "../images/coverart/mindPalace.png",
+    artistName: "MrSuperCraft, Brunch Collect",
+    songTitle: "Midnight Contemplation",
+  },
+  {
+    src: "../audio/3. Fireflies.wav",
+    coverArt: "../images/coverart/mindPalace.png",
+    artistName: "MrSuperCraft, Brunch Collect",
+    songTitle: "Fireflies",
+  },
+  {
+    src: "../audio/4. Solitude.wav",
+    coverArt: "../images/coverart/mindPalace.png",
+    artistName: "MrSuperCraft, Brunch Collect",
+    songTitle: "Solitude",
+  },
+  {
+    src: "../audio/5. Subconscious.wav",
+    coverArt: "../images/coverart/mindPalace.png",
+    artistName: "MrSuperCraft, Brunch Collect",
+    songTitle: "Subconscious",
+  },
+  {
+    src: "../audio/6. Mt. Imagination.wav",
+    coverArt: "../images/coverart/mindPalace.png",
+    artistName: "MrSuperCraft, Brunch Collect",
+    songTitle: "Mt. Imagination",
+  },
+  {
+    src: "../audio/1. Red Skies.wav",
+    coverArt: "../images/coverart/SummerStories.png",
+    artistName: "MrSuperCraft",
+    songTitle: "Red Skies",
+  },
+  {
+    src: "../audio/2. Dusk.wav",
+    coverArt: "../images/coverart/SummerStories.png",
+    artistName: "MrSuperCraft",
+    songTitle: "Dusk",
+  },
+  {
+    src: "../audio/3. Tears Grow Trees.wav",
+    coverArt: "../images/coverart/SummerStories.png",
+    artistName: "MrSuperCraft",
+    songTitle: "Tears Grow Trees",
+  },
+  {
+    src: "../audio/4. False Reality.wav",
+    coverArt: "../images/coverart/SummerStories.png",
+    artistName: "MrSuperCraft",
+    songTitle: "False Reality",
+  },
+  {
+    src: "../audio/5. Heart's Truth.wav",
+    coverArt: "../images/coverart/SummerStories.png",
+    artistName: "MrSuperCraft",
+    songTitle: "Heart's Truth",
+  },
+  {
+    src: "../audio/6. Was then Wasn't.wav",
+    coverArt: "../images/coverart/SummerStories.png",
+    artistName: "MrSuperCraft",
+    songTitle: "Was then Wasn't",
+  },
+  {
+    src: "../audio/7. The End is only The Beginning of Something New.wav",
+    coverArt: "../images/coverart/SummerStories.png",
+    artistName: "MrSuperCraft",
+    songTitle: "The End is only The Beginning of Something New",
   },
   // Add more audio file and cover art objects as needed
 ];
@@ -98,3 +164,14 @@ audio.addEventListener('ended', playNextSong);
 
 // Load the first audio file on initial setup
 loadCurrentAudio();
+
+//slider progress hover
+const progressSlider = document.getElementById('progress');
+
+progressSlider.addEventListener('mouseover', () => {
+  progressSlider.classList.remove('thumb-hidden');
+});
+
+progressSlider.addEventListener('mouseout', () => {
+  progressSlider.classList.add('thumb-hidden');
+});
