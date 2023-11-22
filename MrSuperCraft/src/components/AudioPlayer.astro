@@ -4,13 +4,15 @@
 
 <div class="audio-player p-4 bg-gray-800 rounded-md">
   <img
-    src="../images/coverart/feelingsAlbum.png"
+    src=""
     alt="Cover Art"
     id="cover-art"
     class="mb-4 rounded-lg w-32 h-32 object-cover"
   />
-  <div class="title text-white mb-2">Title: Sample Title</div>
-  <div class="artist text-gray-400">Artist: Sample Artist</div>
+  <div class="ml-4">
+    <p id="artist-name" class="text-white text-sm"></p>
+    <p id="song-title" class="text-white font-bold text-lg"></p>
+  </div>
   <br />
   <audio id="audio" src=""></audio>
   <div class="controls flex items-center justify-between">
@@ -18,6 +20,11 @@
       id="skip"
       class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md"
       >Skip</button
+    >
+    <button
+      id="shuffle"
+      class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md ml-2"
+      >Shuffle Off</button
     >
     <div class="flex items-center space-x-4">
       <button
@@ -28,7 +35,7 @@
       <input type="range" id="volume" class="ml-4" value="100" />
     </div>
   </div>
-  <div class="progress-bar mt-4">
+  <div class="progress-bar mt-4 w-full">
     <input
       type="range"
       id="progress"
@@ -39,9 +46,3 @@
     />
   </div>
 </div>
-<style>
-  /* Add Tailwind styles specific to your audio player */
-  .progress {
-    width: 100vw;
-  }
-</style>
