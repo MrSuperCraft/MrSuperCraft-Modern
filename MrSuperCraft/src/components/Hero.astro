@@ -4,8 +4,8 @@
 
 <section
   id="Home"
-  class="relative h-screen flex items-center justify-center bg-cover bg-center"
-  style="background-image: url('../images/Website3-1200px.png'); "
+  class="skeleton-loader relative h-screen flex items-center justify-center bg-cover bg-center"
+  style="background-image: url('../images/Website3-1200px.webp'); "
 >
   <!-- Black overlay with low opacity and Gaussian blur -->
   <div
@@ -36,3 +36,25 @@
     >
   </div>
 </section>
+
+<style>
+  .hero-background {
+    width: 100%;
+    height: 100vh; /* Adjust based on your design */
+    background-color: #727272; /* Fallback color for slower connections */
+    background-image: none; /* Remove any default background image */
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+</style>
