@@ -8,17 +8,27 @@ import Layout from "../layouts/layout.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MrSuperCraft</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <!-- Add your additional head elements, stylesheets, or scripts here -->
+  </head>
+  <body>
     <script
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     ></script>
-  </head>
-  <body>
+
     <Layout />
 
     <script src="../scripts/app.js"></script>
     <script src="../scripts/smoothScroll.js"></script>
     <script src="../scripts/menuOpen.js"></script>
     <script src="../scripts/audioPlayer.js"></script>
+    <script src="../scripts/typetext.js"></script>
+
+    <!-- aos scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../scripts/aos.js"></script>
   </body>
 </html>
