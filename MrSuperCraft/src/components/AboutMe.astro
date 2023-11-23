@@ -2,27 +2,108 @@
 
 ---
 
-<div>
+<style>
+  .animated-text {
+    animation: highlight 2s infinite;
+  }
+  @keyframes highlight {
+    0% {
+      color: #fff;
+    }
+    50% {
+      color: #55c1e2;
+    } /* Adjust the color as needed */
+    100% {
+      color: #fff;
+    }
+  }
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+      background-size: 200% 100%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  #text-container {
+    font-size: 1.5em;
+    font-family: "Arial", sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    display: inline-block;
+  }
+
+  .cursor {
+    animation: blink 1s infinite;
+  }
+
+  .text {
+    margin-right: -5px;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .text-gradient {
+    background: linear-gradient(to right, #00ccff, #15769c);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+</style>
+
+<div
+  id="AboutMe"
+  class="min-h-screen text-white bg-gradient-to-r from-blue-900 to-slate-800 dark:bg-gradient-to-r dark:from-gray-600 dark:to-slate-900 bg-animate"
+  style="animation: gradientAnimation 15s infinite"
+>
   <div
-    class="flex items-center justify-center h-screen bg-blue-900 text-white dark:bg-gray-800 dark:text-gray-300"
-    id="AboutMe"
+    class="flex items-center justify-center h-screen"
+    data-aos="fade-up"
+    data-aos-duration="1000"
   >
-    <div class="text-center">
-      <h1 class="text-4xl font-semibold mb-4">Introduction</h1>
-      <p class="text-lg mb-8 vsm:text-base">
-        Hello! I'm MrSuperCraft, a 17-year-old music producer hailing from
-        Israel.
+    <div class="text-center max-w-2xl p-4 md:p-8 lg:p-12">
+      <h1
+        class="whitespace-nowrap text-center text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4"
+        style="text-shadow: 0 0 5px rgba(0,0,0,0.7)"
+      >
+        Meet <span class="animated-text">MrSuperCraft</span>:
+      </h1>
+      <br />
+      <div
+        id="text-container"
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-extrabold"
+      >
+        <span
+          class="text-gradient text-4xl md:text-3xl lg:text-5xl"
+          id="typed-text"></span>
+        <span class="cursor text-xl md:text-3xl lg:text-5xl">|</span>
+      </div>
+      <br />
+      <br />
+      <div class="text-lg md:text-xl mb-8 lg:max-w-2xl lg:mx-auto">
+        Hey there! I'm MrSuperCraft, a 17-year-old music producer from the
+        vibrant music scene of Israel.
 
         <br />
-         Head over to this page in order to see the full story!
-      </p>
-      <button
-        class="text-lg bg-white dark:bg-gray-300 dark:text-gray-800 py-4 px-8 rounded-full transition-transform text-gray-700 hover:bg-slate-600 hover:text-white
-      dark:transition-transform dark:hover:bg-slate-600 dark:hover:text-white
-       shadow-xl"
+         Dive into my musical journey and explore the beats that define me. Let
+        the rhythm tell you my story.
+      </div>
+      <a
+        href="#"
+        class="inline-block text-lg bg-white dark:bg-gray-300 dark:text-gray-800 py-3 px-6 rounded-full
+        transition-all duration-500 text-gray-700 hover:bg-slate-600 hover:text-white dark:transition-transform dark:hover:bg-slate-600 dark:hover:text-white shadow-xl"
       >
-        <a href="">Read More</a>
-      </button>
+        Read More
+      </a>
     </div>
   </div>
 </div>
