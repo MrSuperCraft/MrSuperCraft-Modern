@@ -132,10 +132,10 @@ function playNextSong() {
 playPauseBtn.addEventListener('click', () => {
   if (audio.paused) {
     audio.play();
-    playPauseBtn.textContent = 'Pause';
+    playPauseBtn.innerHTML = '&#9208;';
   } else {
     audio.pause();
-    playPauseBtn.textContent = 'Play';
+    playPauseBtn.innerHTML = '&#9654;';
   }
 });
 
