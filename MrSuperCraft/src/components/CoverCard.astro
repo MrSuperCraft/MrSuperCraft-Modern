@@ -1,0 +1,92 @@
+---
+
+---
+
+<style>
+  #slides {
+    display: flex;
+  }
+
+  .inner {
+    flex: 0 0 100%;
+  }
+
+  .control-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .active-btn {
+    /* Styles for active button, add animations here */
+    background-color: rgb(32, 32, 32);
+    outline: white;
+    box-shadow: 0px 0px 10px black;
+  }
+
+  #prevBtn,
+  #nextBtn {
+    margin-bottom: 8px;
+  }
+
+  .control-btn:hover {
+    background-color: rgb(24, 43, 80);
+    outline: white;
+    box-shadow: 0px 0px 10px black;
+  }
+
+  @media (max-width: 768px) {
+    #slide {
+      width: 7rem;
+      height: 7rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    #slide {
+      margin-inline: 1.5rem;
+    }
+  }
+</style>
+
+<div id="slider" class="mr-10 ml-10 mt-10 max-w-xl relative overflow-hidden">
+  <div
+    id="slides"
+    class="relative flex transition-transform duration-500 ease-in-out transform"
+  >
+    <div class="inner">
+      <img
+        class="slide w-42 h-42"
+        id="slide_1"
+        src="../images/coverart/Lost In Thoughts-.jpg"
+        alt="Lost In Thoughts"
+      />
+    </div>
+    <div class="inner">
+      <img
+        class="slide w-42 h-42"
+        id="slide_2"
+        src="../images/coverart/Star Chaser.jpg"
+        alt="Star Chaser"
+      />
+    </div>
+    <div class="inner">
+      <img
+        class="slide w-42 h-42"
+        id="slide_3"
+        src="../images/coverart/I Once Knew-.jpg"
+        alt="I Once Knew"
+      />
+    </div>
+  </div>
+
+  <div id="controls" class="flex items-center justify-between mt-4">
+    <button id="prevBtn" class="text-2xl text-white md:mr-2">&larr;</button>
+    <label class="control-btn active-btn md:mx-2" id="labelSlide1"></label>
+    <label class="control-btn md:mx-2" id="labelSlide2"></label>
+    <label class="control-btn md:mx-2" id="labelSlide3"></label>
+    <button id="nextBtn" class="text-2xl text-white md:ml-2">&rarr;</button>
+  </div>
+</div>

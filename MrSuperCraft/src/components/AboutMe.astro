@@ -1,5 +1,5 @@
 ---
-
+import CoverCard from "../components/CoverCard.astro";
 ---
 
 <style>
@@ -58,6 +58,21 @@
     -webkit-background-clip: text;
     color: transparent;
   }
+
+  .cover-art-container {
+    flex: 1; /* Take remaining space */
+    margin-right: 20px; /* Adjust margin as needed */
+  }
+
+  #AboutMe {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+  }
+
+  .text-content {
+    text-align: center; /* Center text */
+  }
 </style>
 
 <div
@@ -66,11 +81,12 @@
   style="animation: gradientAnimation 15s infinite"
 >
   <div
-    class="flex items-center justify-center h-screen"
+    class="flex flex-row-reverse items-center justify-center h-screen max-lg:flex-col max-lg:h-auto max-lg:mb-6"
     data-aos="fade-up"
     data-aos-duration="1000"
   >
-    <div class="text-center max-w-2xl p-4 md:p-8 lg:p-12">
+    <!-- Text Content -->
+    <div class="text-content max-w-2xl p-4 md:p-8 lg:p-12">
       <h1
         class="whitespace-nowrap text-center text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4"
         style="text-shadow: 0 0 5px rgba(0,0,0,0.7)"
@@ -94,18 +110,19 @@
       <div class="text-lg md:text-xl mb-8 lg:max-w-2xl lg:mx-auto">
         Hey there! I'm MrSuperCraft, a 17-year-old music producer from the
         vibrant music scene of Israel.
-
         <br />
          Dive into my musical journey and explore the beats that define me. Let
         the rhythm tell you my story.
       </div>
       <a
         href="#"
-        class="inline-block text-lg bg-white dark:bg-gray-300 dark:text-gray-800 py-3 px-6 rounded-full
-        transition-all duration-500 text-gray-700 hover:bg-slate-600 hover:text-white dark:transition-transform dark:hover:bg-slate-600 dark:hover:text-white shadow-xl"
+        class="inline-block text-lg bg-white dark:bg-gray-300 dark:text-gray-800 py-3 px-6 rounded-full transition-all duration-500 text-gray-700 hover:bg-slate-600 hover:text-white dark:transition-transform dark:hover:bg-slate-600 dark:hover:text-white shadow-xl"
       >
         Read More
       </a>
     </div>
+    <!-- Cover Card -->
+    <div class="mx-12"></div>
+    <CoverCard />
   </div>
 </div>
