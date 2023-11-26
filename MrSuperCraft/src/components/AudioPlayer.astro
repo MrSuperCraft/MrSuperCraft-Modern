@@ -2,6 +2,16 @@
 
 ---
 
+<style>
+  .close {
+    transition: color 0.5s ease;
+  }
+  .close:hover {
+    color: rgb(33, 108, 179);
+    cursor: pointer;
+  }
+</style>
+
 <div
   class="audio-player p-4 bg-gray-800 dark:bg-gray-700 rounded-md transition-all duration-300 ease-in-out"
 >
@@ -54,5 +64,32 @@
       min="0"
       max="100"
     />
+  </div>
+
+  <div
+    id="myModal"
+    class="modal hidden fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 justify-center items-center"
+  >
+    <!-- Modal content goes here -->
+    <div class="modal-content bg-transparent p-4">
+      <span
+        class="close cursor-pointer text-3xl font-bold absolute right-4 text-white"
+      >
+        &times;
+      </span>
+      <div class="flex flex-col items-center mt-28">
+        <img
+          src=""
+          alt="Cover Art"
+          id="modal-cover-art"
+          class="mb-4 rounded-lg w-full h-auto max-w-md object-cover"
+        />
+        <p
+          id="modal-description"
+          class="text-gray-100 dark:text-gray-200 text-lg text-center mt-3"
+        >
+        </p>
+      </div>
+    </div>
   </div>
 </div>
