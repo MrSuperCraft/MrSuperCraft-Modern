@@ -215,7 +215,7 @@ if (modalDescription && closeButton) {
 
   // Set modal content based on the active cover art
   modalCoverArt.src = coverArt.src;
-  modalDescription.innerText = `From the release: ${currentReleaseName}`;
+  modalDescription.innerText = `From the release: ${currentReleaseName}.`;
   
 }
 
@@ -223,6 +223,12 @@ if (modalDescription && closeButton) {
 function closeModal() {
   document.getElementById("myModal").classList.add("hidden");
 }
+
+document.getElementById("myModal").addEventListener('click', () => {
+  if (!event.target.matches("#modal-cover-art")) {
+    closeModal();
+  }
+})
 
 // Event listener for opening the modal when cover art is clicked
 document.getElementById("cover-art")?.addEventListener("click", openModal);

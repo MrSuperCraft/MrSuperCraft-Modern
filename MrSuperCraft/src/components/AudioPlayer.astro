@@ -7,7 +7,7 @@
     transition: color 0.5s ease;
   }
   .close:hover {
-    color: rgb(33, 108, 179);
+    color: rgb(123, 123, 124);
     cursor: pointer;
   }
 </style>
@@ -45,15 +45,29 @@
         class="bg-blue-500 dark:bg-blue-400 hover:bg-blue-800 dark:hover:bg-blue-500 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-md transition-all duration-300 ease-in-out"
         >&#9654;</button
       >
-      <input
-        type="range"
-        id="volume"
-        name="volume-slider"
-        class="ml-2 sm:ml-4 w-20 sm:w-32 md:w-48 lg:w-64 xl:w-80"
-        value="100"
-      />
+
+      <!-- volume slider -->
+      <div class="relative inline-block group">
+        <input
+          type="range"
+          id="volume"
+          name="volume-slider"
+          class="ml-2 sm:ml-4 w-20 sm:w-32 md:w-48 lg:w-64 xl:w-80 relative"
+          value="100"
+        />
+        <div
+          class="absolute hidden group-hover:block bg-gray-200 p-2 rounded-md left-1/2 -mt-16 transform -translate-x-1/2 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+        >
+          <!-- Message bubble content with icon -->
+          <div id="messageBubble" class="flex items-center">
+            <span class="text-gray-800">&#128265;</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <!-- progress slider -->
   <div class="progress-bar mt-4 w-full">
     <input
       type="range"
@@ -73,7 +87,7 @@
     <!-- Modal content goes here -->
     <div class="modal-content bg-transparent p-4">
       <span
-        class="close cursor-pointer text-3xl font-bold absolute right-4 text-white"
+        class="close cursor-pointer text-6xl md:text-5xl sm:text-3xl max-sm:text-2xl font-bold absolute right-4 text-white"
       >
         &times;
       </span>
@@ -82,12 +96,15 @@
           src=""
           alt="Cover Art"
           id="modal-cover-art"
-          class="mb-4 rounded-lg w-full h-auto max-w-md object-cover"
+          class="mb-4 rounded-lg w-full h-auto max-w-md object-cover shadow-2xl"
         />
         <p
           id="modal-description"
-          class="text-gray-100 dark:text-gray-200 text-lg text-center mt-3"
+          class="text-gray-100 dark:text-gray-200 text-xl text-center mt-3"
         >
+        </p>
+        <p class="text-gray-100 dark:text-gray-200 text-xl text-center mt-3">
+          Click anywhere to close.
         </p>
       </div>
     </div>
