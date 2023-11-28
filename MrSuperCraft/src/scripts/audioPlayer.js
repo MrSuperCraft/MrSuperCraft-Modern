@@ -1,3 +1,5 @@
+import { audioList } from "./songs";
+
 const audio = document.getElementById('audio');
 const playPauseBtn = document.getElementById('play-pause');
 const skipBtn = document.getElementById('skip');
@@ -8,100 +10,6 @@ const progressBar = document.getElementById('progress');
 const artistName = document.getElementById('artist-name');
 const songTitle = document.getElementById('song-title');
 
-const audioList = [
-  {
-    src: "../audio/1. Mind Palace.wav",
-    coverArt: "../images/coverart/mindPalace.png",
-    artistName: "MrSuperCraft, Brunch Collect",
-    releaseName: "Mind Palace",
-    songTitle: "Mind Palace",
-  },
-  {
-    src: "../audio/2. Midnight Contemplation.wav",
-    coverArt: "../images/coverart/mindPalace.png",
-    artistName: "MrSuperCraft, Brunch Collect",
-    releaseName: "Mind Palace",
-    songTitle: "Midnight Contemplation",
-  },
-  {
-    src: "../audio/3. Fireflies.wav",
-    coverArt: "../images/coverart/mindPalace.png",
-    artistName: "MrSuperCraft, Brunch Collect",
-    releaseName: "Mind Palace",
-    songTitle: "Fireflies",
-  },
-  {
-    src: "../audio/4. Solitude.wav",
-    coverArt: "../images/coverart/mindPalace.png",
-    artistName: "MrSuperCraft, Brunch Collect",
-    releaseName: "Mind Palace",
-    songTitle: "Solitude",
-  },
-  {
-    src: "../audio/5. Subconscious.wav",
-    coverArt: "../images/coverart/mindPalace.png",
-    artistName: "MrSuperCraft, Brunch Collect",
-    releaseName: "Mind Palace",
-    songTitle: "Subconscious",
-  },
-  {
-    src: "../audio/6. Mt. Imagination.wav",
-    coverArt: "../images/coverart/mindPalace.png",
-    artistName: "MrSuperCraft, Brunch Collect",
-    releaseName: "Mind Palace",
-    songTitle: "Mt. Imagination",
-  },
-  {
-    src: "../audio/1. Red Skies.wav",
-    coverArt: "../images/coverart/SummerStories.png",
-    artistName: "MrSuperCraft",
-    releaseName: "Summer Stories",
-    songTitle: "Red Skies",
-  },
-  {
-    src: "../audio/2. Dusk.wav",
-    coverArt: "../images/coverart/SummerStories.png",
-    artistName: "MrSuperCraft",
-    releaseName: "Summer Stories",
-    songTitle: "Dusk",
-  },
-  {
-    src: "../audio/3. Tears Grow Trees.wav",
-    coverArt: "../images/coverart/SummerStories.png",
-    artistName: "MrSuperCraft",
-    releaseName: "Summer Stories",
-    songTitle: "Tears Grow Trees",
-  },
-  {
-    src: "../audio/4. False Reality.wav",
-    coverArt: "../images/coverart/SummerStories.png",
-    artistName: "MrSuperCraft",
-    releaseName: "Summer Stories",
-    songTitle: "False Reality",
-  },
-  {
-    src: "../audio/5. Heart's Truth.wav",
-    coverArt: "../images/coverart/SummerStories.png",
-    artistName: "MrSuperCraft",
-    releaseName: "Summer Stories",
-    songTitle: "Heart's Truth",
-  },
-  {
-    src: "../audio/6. Was then Wasn't.wav",
-    coverArt: "../images/coverart/SummerStories.png",
-    artistName: "MrSuperCraft",
-    releaseName: "Summer Stories",
-    songTitle: "Was then Wasn't",
-  },
-  {
-    src: "../audio/7. The End is only The Beginning of Something New.wav",
-    coverArt: "../images/coverart/SummerStories.png",
-    artistName: "MrSuperCraft",
-    releaseName: "Summer Stories",
-    songTitle: "The End is only The Beginning of Something New",
-  },
-  // Add more audio file and cover art objects as needed
-];
 
 // Shuffling Songs
 let currentAudioIndex = 0;
