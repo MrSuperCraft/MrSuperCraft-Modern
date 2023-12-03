@@ -26,7 +26,8 @@ export default {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
-        caveat: ['Caveat' , 'cursive']
+        caveat: ['Caveat' , 'cursive'],
+        patrick: ['Patrick Hand', 'cursive'],
       },
     },
   },
