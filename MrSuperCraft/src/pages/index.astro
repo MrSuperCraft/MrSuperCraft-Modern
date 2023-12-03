@@ -1,5 +1,10 @@
 ---
 import Layout from "../layouts/layout.astro";
+import Astro from "astro";
+
+// Cast Astro to any and access generator
+const astroAny: any = Astro;
+const generator = astroAny.generator;
 ---
 
 <!doctype html>
@@ -10,6 +15,7 @@ import Layout from "../layouts/layout.astro";
     <meta
       description="MrSuperCraft's Official Arist Website! Stream your favorite artist, read more about him and contact here!"
     />
+    <meta name="generator" content={generator} />
     <title>MrSuperCraft</title>
 
     <link rel="stylesheet" href="/css/styles.css" />
@@ -29,7 +35,7 @@ import Layout from "../layouts/layout.astro";
 
     <!-- Add your additional head elements, stylesheets, or scripts here -->
   </head>
-  <body>
+  <body data-page="HomePage">
     <script
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     ></script>
@@ -44,7 +50,7 @@ import Layout from "../layouts/layout.astro";
     <script src="../scripts/coverSwitch.js"></script>
     <script src="../scripts/songs.js"></script>
     <script src="../scripts/btnhandle.js"></script>
-
+    <script src="../scripts/waves.js"></script>
     <!-- aos scripts -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer
     ></script>
