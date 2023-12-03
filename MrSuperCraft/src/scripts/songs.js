@@ -125,4 +125,34 @@ export const releases = [
             'https://music.amazon.com/tracks/B0BTCBS9X2?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_AnktZixpdTTMLaDfhm3NLBUyK',
         ],
     },
+    {
+      title: "Change",
+      coverImage: '../images/coverart/MrSuperCraft Change.png',
+      links: [
+          'https://open.spotify.com/track/2LipYfmqdhCQ6h6E8TqyEs?si=dd4696263cd04474',
+          'https://music.apple.com/us/album/change/1666978951?i=1666978952',
+          'https://youtu.be/lz8Wzei89tc?si=1-NL8MGsxRosvQ3U',
+          'https://music.amazon.com/tracks/B0BSRCG6DX?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_UqGVrnmQgYtiOUw8WQPTQ2UEF',
+      ],
+  },
+  {
+    title: "When The Clouds Cry",
+    coverImage: '../images/coverart/MrSuperCraft Change.png',
+    links: [
+        'https://open.spotify.com/track/26G3A2SZ3VzJYM8MrV0wcW?si=a4beddb7c3394496',
+        'https://music.apple.com/us/album/when-the-clouds-cry/1678468785?i=1678469086',
+        'https://youtu.be/Kj2Cv2Cq6Cg?si=fhBksOnjyk8-fyJ8',
+        'https://music.amazon.com/tracks/B0BZ7CYQC2?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_QRBDy0o8IysgW5O8bCXxYLprz',
+    ],
+},
+{
+  title: "Summer Stories",
+  coverImage: '../images/coverart/SummerStories.png',
+  links: [
+      'https://open.spotify.com/album/39Z3n7yx8urSUQ3hNwwZD6?si=CdC-BSG9RumN9BvjVCMI9Q',
+      'https://music.apple.com/us/album/summer-stories/1701281605',
+      'https://youtube.com/playlist?list=OLAK5uy_m0wNL0mv6ZnsnLDkiiHHYmlatCdUMhJco&si=tfejcqlOqzGEd-no',
+      'https://music.amazon.com/albums/B0CDSQHC1R?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_vocUqcGZ4K23j8bDrqR8NyGrB',
+  ],
+},
 ];

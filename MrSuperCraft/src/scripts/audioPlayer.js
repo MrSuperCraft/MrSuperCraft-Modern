@@ -2,6 +2,7 @@ import { audioList } from "./songs";
 
 const audio = document.getElementById('audio');
 const playPauseBtn = document.getElementById('play-pause');
+const playPauseIcon = document.querySelector('.fa-play');
 const skipBtn = document.getElementById('skip');
 const shuffleBtn = document.getElementById('shuffle');
 const volumeSlider = document.getElementById('volume');
@@ -54,18 +55,23 @@ function playNextSong() {
 playPauseBtn.addEventListener('click', () => {
   if (audio.paused) {
     audio.play();
-    playPauseBtn.innerHTML = '&#9208;';
+    playPauseIcon.classList.replace('fa-play' , 'fa-pause');
   } else {
     audio.pause();
-    playPauseBtn.innerHTML = '&#9654;';
+    playPauseIcon.classList.replace('fa-pause' , 'fa-play');
   }
 });
 
 skipBtn.addEventListener('click', playNextSong);
 
-shuffleBtn.addEventListener('click', () => {
-  isShuffleMode = !isShuffleMode;
-  shuffleBtn.textContent = isShuffleMode ? 'Shuffle On' : 'Shuffle Off';
+document.addEventListener('DOMContentLoaded', () => {
+  const shuffleIcon = document.querySelector('.fa-random');
+  const shuffleBtn = document.getElementById('shuffle');
+
+  shuffleBtn.addEventListener('click', () => {
+    isShuffleMode = !isShuffleMode;
+    shuffleIcon.style.color = isShuffleMode ? '#007aff' : '';
+  });
 });
 
 volumeSlider.addEventListener('input', () => {
@@ -100,48 +106,48 @@ progressSlider.addEventListener('mouseout', () => {
 
 
 
-// Modal Opener / Closer
-
-// Function to open the modal
-
 const modal = document.getElementById("myModal");
 const modalCoverArt = document.getElementById("modal-cover-art");
-const modalDescription = document.getElementById("modal-description"); 
+const modalDescription = document.getElementById("modal-description");
 const closeButton = document.querySelector(".close");
-
 
 function openModal() {
   const currentReleaseName = audioList[currentAudioIndex].releaseName;
-  // Set modal content based on the active cover art
   modalCoverArt.src = coverArt.src;
   modalDescription.innerText = `From the release: ${currentReleaseName}`;
-  modal.classList.remove("hidden");
+
+    // Add the fade-in class with a short delay for smoother transition
+    setTimeout(() => {
+      modal.classList.add("fade-in");
+  
+      // Use requestAnimationFrame to ensure a repaint before removing hidden class
+      requestAnimationFrame(() => {
+        modal.classList.remove("hidden");
+      });
+    }, 10);
 }
 
 if (modalDescription && closeButton) {
   const currentReleaseName = audioList[currentAudioIndex].releaseName;
-
-  // Set modal content based on the active cover art
   modalCoverArt.src = coverArt.src;
   modalDescription.innerText = `From the release: ${currentReleaseName}.`;
-  
 }
-
 
 function closeModal() {
-  document.getElementById("myModal").classList.add("hidden");
+  modal.classList.remove("fade-in");
+  modal.classList.add("fade-out");
+  setTimeout(() => {
+    modal.classList.add("hidden");
+    modal.classList.remove("fade-out");
+  }, 500); // Adjust the timeout to match the transition duration
 }
 
-document.getElementById("myModal").addEventListener('click', () => {
+document.getElementById("myModal").addEventListener('click', (event) => {
   if (!event.target.matches("#modal-cover-art")) {
     closeModal();
   }
-})
+});
 
-// Event listener for opening the modal when cover art is clicked
 document.getElementById("cover-art")?.addEventListener("click", openModal);
-
-// Event listener for closing the modal when the close button is clicked
 document.querySelector(".close")?.addEventListener("click", closeModal);
-
 
