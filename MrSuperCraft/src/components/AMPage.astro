@@ -2,7 +2,23 @@
 
 ---
 
-<div class="min-h-screen flex items-center justify-center relative">
+<style>
+  .ampagediv {
+    width: 80%;
+  }
+
+  @media (max-width: 450px) {
+    .ampagediv {
+      width: 90%;
+    }
+    .ampagetitle {
+      font-size: 1.5rem;
+      line-height: 3rem;
+    }
+  }
+</style>
+
+<div class="min-h-screen h-full flex items-center justify-center relative">
   <img
     src="../images/Website3-1200px.webp"
     alt="Your Image"
@@ -12,29 +28,30 @@
 
   <!-- Your content goes here -->
   <div
-    class="static flex items-center justify-center w-full mt-40 mb-16 flex-col bg-white shadow-xl p-8 rounded-md"
-    style="width: 80%;"
+    class="ampagediv static flex items-center justify-center w-full mt-40 mb-20 flex-col bg-white shadow-2xl p-8 rounded-md max-sm:w-90 sm:w-80 md:w-80 lg:w-70"
     data-aos="fade-up"
     data-aos-duration="800"
   >
     <h1
-      class="text-4xl md:text-7xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center"
+      class="ampagetitle max-sm:line-clamp-1 max-sm:whitespace-nowrap text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center md:max-w-2xl lg:max-w-3xl"
     >
       🎶 About Me: MrSuperCraft 🎶
     </h1>
-    <p class="text-black text-center text-xl md:text-2xl w-2/3">
+    <p
+      class="text-black text-justify md:text-center text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
+    >
       Hey there! I'm MrSuperCraft, a dedicated music producer and versatile
       artist with a passion for drumming and piano. My musical journey is a
       tapestry of rhythm and melody, and I'm thrilled to share some highlights
       with you.
     </p>
     <h2
-      class="text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center"
+      class="ampagetitle max-sm:line-clamp-1 max-sm:whitespace-nowrap text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center md:max-w-2xl lg:max-w-3xl"
     >
       🥁 Drums & Keys Enthusiast 🎹
     </h2>
     <p
-      class="text-black text-justify text-md sm:text-lg md:text-xl max-sm:w-4/5 sm:w-2/3"
+      class="text-black text-left md:text-justify text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
     >
       I delved into the world of music at the age of 8, initially discovering my
       voice and rhythm with the drums. In recent years, the soulful melodies of
@@ -50,12 +67,12 @@
       resonated with me, providing a unique canvas for my creativity.
     </p>
     <h2
-      class="text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center"
+      class="ampagetitle max-sm:line-clamp-1 max-sm:whitespace-nowrap text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center md:max-w-2xl lg:max-w-3xl"
     >
       🎧 Lofi Hip Hop Maestro 💿
     </h2>
     <p
-      class="text-black text-justify text-md sm:text-lg md:text-xl max-sm:w-4/5 sm:w-2/3"
+      class="text-black text-left md:text-justify text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
     >
       My creative palette often embraces the serene sounds of lofi hip hop. From
       the quiet and melancholic to the loud, aggressive, and nostalgic beats,
@@ -66,6 +83,23 @@
       of energy, resonating with a nostalgic undertone that lingers in the air.
       It's a dynamic journey through emotions, offering a unique and versatile
       experience within the realm of lofi hip hop.
+    </p>
+    <h2
+      class="ampagetitle max-sm:line-clamp-1 max-sm:whitespace-nowrap text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center md:max-w-2xl lg:max-w-3xl"
+    >
+      🌟 Label Collaborations ✨
+    </h2>
+    <p
+      class="text-black text-left md:text-justify text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
+    >
+      I've had the privilege of working along side <a class="underline"
+        >Familiar Faces Records</a
+      > for many times during the year of 2023. Aside from Familiar Faces, I had
+      the honor to work with <a class="underline">Kanimayo Lofi</a> on my
+      successful single "<a class="underline">Sakura Bloom</a>", and with <a
+        class="underline">Brunch Collect</a
+      > on two occasions. These collaborations have not only expanded my
+      artistic horizons but also allowed my music to reach a broader audience.
     </p>
   </div>
 </div>
