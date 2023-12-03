@@ -1,19 +1,32 @@
 ---
-
+import PlayerBtns from "./PlayerBtns.astro";
+import Wave from "./Wave.astro";
 ---
 
 <style>
   .close {
     transition: color 0.5s ease;
   }
+  #myModal {
+    transition: opacity 0.5s ease-in-out;
+  }
   .close:hover {
     color: rgb(123, 123, 124);
     cursor: pointer;
   }
+  .fade-in {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .fade-out {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
 </style>
 
 <div
-  class="audio-player p-4 bg-gray-800 dark:bg-gray-700 rounded-md transition-all duration-300 ease-in-out"
+  class="audio-player p-4 bg-gray-800 dark:bg-gray-700 rounded-md transition-all duration-300 ease-in-out mb-0"
 >
   <img
     src=""
@@ -21,52 +34,15 @@
     id="cover-art"
     class="mb-4 rounded-lg w-32 h-32 object-cover hover:scale-110 duration-500"
   />
-  <div class="ml-4">
+  <div class="">
     <p id="artist-name" class="text-white dark:text-gray-300 text-sm"></p>
     <p id="song-title" class="text-white dark:text-gray-300 font-bold text-lg">
     </p>
   </div>
   <br />
   <audio id="audio" src="" preload="auto"></audio>
-  <div class="controls flex items-center justify-between">
-    <button
-      id="skip"
-      class="bg-gray-600 dark:bg-gray-500 hover:bg-gray-700 dark:hover:bg-gray-600 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-md transition-all duration-300 ease-in-out"
-      >Skip</button
-    >
-    <button
-      id="shuffle"
-      class="bg-gray-600 dark:bg-gray-500 hover:bg-gray-700 dark:hover:bg-gray-600 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-md ml-2 transition-all duration-300 ease-in-out"
-      >Shuffle Off</button
-    >
-    <div class="flex items-center space-x-4">
-      <button
-        id="play-pause"
-        class="bg-blue-500 dark:bg-blue-400 hover:bg-blue-800 dark:hover:bg-blue-500 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-md transition-all duration-300 ease-in-out"
-        >&#9654;</button
-      >
 
-      <!-- volume slider -->
-      <div class="relative inline-block group">
-        <input
-          type="range"
-          id="volume"
-          name="volume-slider"
-          class="ml-2 sm:ml-4 w-20 sm:w-32 md:w-48 lg:w-64 xl:w-80 relative"
-          value="100"
-        />
-        <div
-          class="absolute hidden group-hover:block bg-gray-200 p-2 rounded-md left-1/2 -mt-16 transform -translate-x-1/2 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
-        >
-          <!-- Message bubble content with icon -->
-          <div id="messageBubble" class="flex items-center">
-            <span class="text-gray-800">&#128265;</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <PlayerBtns />
   <!-- progress slider -->
   <div class="progress-bar mt-4 w-full">
     <input
@@ -85,7 +61,7 @@
     class="modal hidden fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 justify-center items-center"
   >
     <!-- Modal content goes here -->
-    <div class="modal-content bg-transparent p-4">
+    <div class="modal-content bg-transparent p-4 transition-all duration-500">
       <span
         class="close cursor-pointer text-6xl md:text-5xl sm:text-3xl max-sm:text-2xl font-bold absolute right-4 text-white"
       >
