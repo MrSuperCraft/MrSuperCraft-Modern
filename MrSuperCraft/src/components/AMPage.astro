@@ -16,6 +16,29 @@
       line-height: 3rem;
     }
   }
+  .tooltip {
+    position: absolute;
+    bottom: -60px; /* Adjust this value for the desired spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center; /* Center the text */
+    padding: 8px; /* Add padding for better visibility */
+    max-width: 150px; /* Set a max width to prevent overflowing */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide any overflow */
+    text-overflow: ellipsis; /* Show ellipsis for long text */
+  }
+
+  .dark-mode .tooltip {
+    background-color: #1a202c; /* Dark mode background color */
+    color: #cbd5e0; /* Dark mode text color */
+  }
+
+  .group:hover .tooltip {
+    opacity: 1;
+  }
 </style>
 
 <div class="min-h-screen h-full flex items-center justify-center relative">
@@ -28,17 +51,17 @@
 
   <!-- Your content goes here -->
   <div
-    class="ampagediv static flex items-center justify-center w-full mt-40 mb-20 flex-col bg-white shadow-2xl p-8 rounded-md max-sm:w-90 sm:w-80 md:w-80 lg:w-70"
+    class="ampagediv dark:bg-slate-900 dark:text-white transition-all duration-500 ease-in-out delay-300 static flex items-center justify-center w-full mt-40 mb-20 flex-col bg-white shadow-2xl p-8 rounded-md max-sm:w-90 sm:w-80 md:w-80 lg:w-70"
     data-aos="fade-up"
     data-aos-duration="800"
   >
     <h1
-      class="ampagetitle max-sm:line-clamp-1 max-sm:whitespace-nowrap text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center md:max-w-2xl lg:max-w-3xl"
+      class="transition-all duration-500 ease-in-out ampagetitle max-sm:line-clamp-1 max-sm:whitespace-nowrap text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center md:max-w-2xl lg:max-w-3xl"
     >
       🎶 About Me: MrSuperCraft 🎶
     </h1>
     <p
-      class="text-black text-justify md:text-center text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
+      class="transition-all duration-500 ease-in-out dark:text-white text-black text-justify md:text-center text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
     >
       Hey there! I'm MrSuperCraft, a dedicated music producer and versatile
       artist with a passion for drumming and piano. My musical journey is a
@@ -46,33 +69,35 @@
       with you.
     </p>
     <h2
-      class="ampagetitle max-sm:line-clamp-1 max-sm:whitespace-nowrap text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center md:max-w-2xl lg:max-w-3xl"
+      class="transition-all duration-500 ease-in-out ampagetitle max-sm:line-clamp-1 max-sm:whitespace-nowrap text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center md:max-w-2xl lg:max-w-3xl"
     >
       🥁 Drums & Keys Enthusiast 🎹
     </h2>
     <p
-      class="text-black text-left md:text-justify text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
+      class="transition-all duration-500 ease-in-out dark:text-white text-black text-left md:text-justify text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
     >
       I delved into the world of music at the age of 8, initially discovering my
       voice and rhythm with the drums. In recent years, the soulful melodies of
       the piano have become an integral part of my musical expression. These
       instruments transcend mere tools - they form the heartbeat of my
       compositions. <br />
+      <br />
        As my musical journey unfolded, a friend introduced me to the captivating
       realm of music production. Exploring the intricacies of crafting sounds
-      and manipulating beats became a newfound passion, adding a dynamic layer
-      to my creative process. <br />
+      (and manipulating them into oblivion) became a newfound passion, adding a
+      dynamic layer to my creative process. <br />
+      <br />
        After a year into my exploration in the realm of music, I stumbled upon
       the captivating beauty of Lofi Hip Hop. Its tranquil and expressive nature
       resonated with me, providing a unique canvas for my creativity.
     </p>
     <h2
-      class="ampagetitle max-sm:line-clamp-1 max-sm:whitespace-nowrap text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center md:max-w-2xl lg:max-w-3xl"
+      class="transition-all duration-500 ease-in-out ampagetitle max-sm:line-clamp-1 max-sm:whitespace-nowrap text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center md:max-w-2xl lg:max-w-3xl"
     >
       🎧 Lofi Hip Hop Maestro 💿
     </h2>
     <p
-      class="text-black text-left md:text-justify text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
+      class="transition-all duration-500 ease-in-out dark:text-white text-black text-left md:text-justify text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
     >
       My creative palette often embraces the serene sounds of lofi hip hop. From
       the quiet and melancholic to the loud, aggressive, and nostalgic beats,
@@ -85,21 +110,148 @@
       experience within the realm of lofi hip hop.
     </p>
     <h2
-      class="ampagetitle max-sm:line-clamp-1 max-sm:whitespace-nowrap text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center md:max-w-2xl lg:max-w-3xl"
+      class="transition-all duration-500 ease-in-out ampagetitle max-sm:line-clamp-1 max-sm:whitespace-nowrap text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center md:max-w-2xl lg:max-w-3xl"
     >
       🌟 Label Collaborations ✨
     </h2>
     <p
-      class="text-black text-left md:text-justify text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
+      class="transition-all ease-in-out dark:text-white text-black text-left md:text-justify text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
     >
-      I've had the privilege of working along side <a class="underline"
-        >Familiar Faces Records</a
+      I've had the privilege of working along side <a
+        target="_blank"
+        class="underline font-bold transition-colors duration-300 dark:hover:text-teal-300 hover:text-teal-800"
+        href="https://solo.to/familiarrecords">Familiar Faces Records</a
       > for many times during the year of 2023. Aside from Familiar Faces, I had
-      the honor to work with <a class="underline">Kanimayo Lofi</a> on my
-      successful single "<a class="underline">Sakura Bloom</a>", and with <a
-        class="underline">Brunch Collect</a
+      the honor to work with <a
+        target="_blank"
+        class="underline font-bold transition-colors duration-300 dark:hover:text-teal-300 hover:text-teal-800"
+        href="https://fanlink.to/kanimayo-lofi">Kanimayo Lofi</a
+      > on my successful single "<a
+        target="_blank"
+        class="underline font-bold transition-colors duration-300 dark:hover:text-teal-300 hover:text-teal-800"
+        href="https://open.spotify.com/track/4iDljp0M9qJ5bV7Q9YwKIz?si=8392c2111afe423e"
+        >Sakura Bloom</a
+      >", and with <a
+        target="_blank"
+        class="underline font-bold transition-colors duration-300 dark:hover:text-teal-300 hover:text-teal-800"
+        href="https://www.brunchcollect.com/">Brunch Collect</a
       > on two occasions. These collaborations have not only expanded my
       artistic horizons but also allowed my music to reach a broader audience.
+    </p>
+    <div class="flex justify-between items-center mt-10 mb-10">
+      <div class="relative mx-7 group">
+        <div
+          class="w-24 h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 overflow-hidden rounded-full transition-transform transform hover:scale-110 border-2 border-black dark:border-none"
+        >
+          <img
+            src="/images/Brunch.jpg"
+            alt="Brunch Collect Logo"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div
+          class="text-white tooltip text-lg bg-slate-700 dark:bg-slate-400 rounded-md"
+        >
+          Brunch Collect
+        </div>
+      </div>
+
+      <div class="relative mx-7 group">
+        <div
+          class="w-24 h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 overflow-hidden rounded-full transition-transform transform hover:scale-110 border-2 border-black dark:border-none"
+        >
+          <img
+            src="/images/Kanimayo.jpg"
+            alt="Kanimayo Lofi Logo"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div
+          class="text-white tooltip text-lg bg-slate-700 dark:bg-slate-400 rounded-md"
+        >
+          Kanimayo Lofi
+        </div>
+      </div>
+
+      <div class="relative mx-7 group">
+        <div
+          class="w-24 h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 overflow-hidden rounded-full transition-transform transform hover:scale-110 border-2 border-black dark:border-none"
+        >
+          <img
+            src="/images/FamiliarRecords.jpg"
+            alt="Familiar Records Logo"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div
+          class="text-white tooltip text-lg bg-slate-700 dark:bg-slate-400 rounded-md"
+        >
+          Familiar Records
+        </div>
+      </div>
+    </div>
+
+    <h2
+      class="transition-all duration-500 ease-in-out ampagetitle max-sm:line-clamp-1 max-sm:whitespace-nowrap text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center md:max-w-2xl lg:max-w-3xl"
+    >
+      🏆Achievements & Milestones🏆
+    </h2>
+    <p
+      class="flex col transition-all ease-in-out dark:text-white text-black text-left md:text-justify text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
+    >
+      <li
+        class="transition-all ease-in-out dark:text-white text-black text-left md:text-justify text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
+      >
+        "Sakura Bloom" landed on the Spotify editorial playlist "<a
+          target="_blank"
+          class="underline font-bold transition-colors duration-300 dark:hover:text-teal-300 hover:text-teal-800"
+          href="https://open.spotify.com/playlist/37i9dQZF1DX3qCx5yEZkcJ?si=616adad2b9e247fe"
+          >Mellow Beats</a
+        >".
+      </li>
+
+      <li
+        class="transition-all ease-in-out dark:text-white text-black text-left md:text-justify text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
+      >
+        I have reached a total of 120,000 streams on Spotify and over 52,000
+        streams on Apple Music (December 2023).
+      </li>
+      <li
+        class="transition-all ease-in-out dark:text-white text-black text-left md:text-justify text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
+      >
+        Appeared on 2 special label compilations: "<a
+          target="_blank"
+          class="underline font-bold transition-colors duration-300 dark:hover:text-teal-300 hover:text-teal-800"
+          href="https://open.spotify.com/track/3BrJGgNjFmVUIP6065ilT8?si=800b513923e2420e"
+          >I Once Knew</a
+        >" on Familiar Faces Records' "<a
+          target="_blank"
+          class="underline font-bold transition-colors duration-300 dark:hover:text-teal-300 hover:text-teal-800"
+          href="https://open.spotify.com/album/080VgVvfOKifUayLUH7Jme?si=jKfVSzWfSR2XwDMNaAtGmw"
+          >Spring Awakening</a
+        >" , and "<a
+          target="_blank"
+          class="underline font-bold transition-colors duration-300 dark:hover:text-teal-300 hover:text-teal-800"
+          href="https://open.spotify.com/track/1hrNaWaAM2tAQN8xQVpL51?si=100b9943aeae419a"
+          >Against The Tide</a
+        >" on Brunch Collect & Fresh As' compilation "<a
+          target="_blank"
+          class="underline font-bold transition-colors duration-300 dark:hover:text-teal-300 hover:text-teal-800"
+          href="https://open.spotify.com/album/4HAW1lWIikn27yhZTkE7Rv?si=w-bjTFqJSaCgJqY8cX3U1g"
+          >Sunset Boulevard</a
+        >".
+      </li>
+    </p>
+    <h2
+      class="transition-all duration-500 ease-in-out ampagetitle max-sm:line-clamp-1 max-sm:whitespace-nowrap text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center md:max-w-2xl lg:max-w-3xl"
+    >
+      🔗Connect, Listen, Repeat🔗
+    </h2>
+    <p
+      class="transition-all duration-500 ease-in-out dark:text-white text-black text-left md:text-justify text-md sm:text-lg md:text-xl max-sm:w-full sm:w-2/3"
+    >
+      Embark on this expansive musical odyssey with me – follow, listen, and
+      let's explore the nuanced emotions within lofi hip hop together. 🎹🥁✨
     </p>
   </div>
 </div>
