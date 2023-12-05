@@ -1,0 +1,229 @@
+---
+
+---
+
+<footer
+  class="bg-gradient-to-r from-purple-800 via-blue-700 to-slate-600 dark:from-gray-500 dark:via-stone-700 dark:to-gray-900 text-white p-8"
+>
+  <div
+    class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+  >
+    <div class="text-center md:text-left">
+      <a href="#Home">
+        <h3 class="text-3xl font-bold mt-14">MrSuperCraft</h3></a
+      >
+    </div>
+    <div>
+      <h3 class="text-xl font-bold mb-4">Music</h3>
+      <ul class="space-y-2 space-x-4">
+        <li class="circle-icon music-link w-10 h-10">
+          <a
+            href="https://open.spotify.com/playlist/2EErF7Z6YOEqqzevS4JGg0?si=9a28bf4010024eb2"
+            ><i class="fas fa-music"></i></a
+          >
+        </li>
+        <li class="circle-icon users-link w-10 h-10">
+          <a href="/polls/"><i class="fas fa-users"></i></a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-xl font-bold mb-4">New Releases</h3>
+      <p>
+        Don't miss any new tracks by MrSuperCraft!
+        <br />
+         Check the streaming platforms & instagram for updates~
+      </p>
+    </div>
+    <div>
+      <h3 class="text-xl font-bold mb-4">Connect</h3>
+      <ul class="flex space-x-4">
+        <li class="circle-icon spotify-link w-10 h-10">
+          <a href="#"><i class="fab fa-spotify"></i></a>
+        </li>
+        <li class="circle-icon youtube-link w-10 h-10">
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </li>
+        <li class="circle-icon apple-link w-10 h-10">
+          <a href="#"><i class="fab fa-apple"></i></a>
+        </li>
+        <li class="circle-icon amazon-link w-10 h-10">
+          <a href="#"><i class="fa-brands fa-amazon"></i></a>
+        </li>
+        <li class="circle-icon napster-link w-10 h-10">
+          <a href="#"><i class="fa-brands fa-napster"></i></a>
+        </li>
+        <li class="circle-icon instagram-link w-10 h-10">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-8 text-center">
+    <p>&copy; 2023 MrSuperCraft. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .circle-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2; /* Set z-index here to ensure icons are above the overlay */
+  }
+
+  .circle-icon::before {
+    content: "";
+    background: linear-gradient(
+      to bottom,
+      rgba(128, 0, 128, 0.8) 0%,
+      rgba(255, 105, 180, 0.8) 100%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Set z-index to make sure overlay is behind the icon */
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+
+  .circle-icon:hover::before {
+    transform: scale(1);
+  }
+
+  .music-link::before {
+    content: "";
+    background: linear-gradient(
+      rgba(128, 0, 128, 0.8),
+      rgba(255, 105, 180, 0.8)
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+  .album-link::before {
+    content: "";
+    background: linear-gradient(
+      rgba(255, 20, 147, 0.8),
+      rgba(255, 105, 180, 0.8)
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+  .users-link::before {
+    content: "";
+    background: linear-gradient(
+      rgba(255, 69, 0, 0.8),
+      rgba(255, 105, 180, 0.8)
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+  .spotify-link::before {
+    content: "";
+    background: linear-gradient(rgba(29, 185, 84, 0.8), rgba(30, 215, 96, 0.8));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+  .youtube-link::before {
+    content: "";
+    background: linear-gradient(rgba(255, 0, 0, 0.8), rgba(255, 69, 0, 0.8));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+  .apple-link::before {
+    content: "";
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(200, 200, 200, 0.8)
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+  .amazon-link::before {
+    content: "";
+    background: linear-gradient(rgba(255, 140, 0, 0.8), rgba(255, 165, 0, 0.8));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+  .napster-link::before {
+    content: "";
+    background: linear-gradient(rgba(0, 0, 255, 0.8), rgba(0, 0, 139, 0.8));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+  .instagram-link::before {
+    content: "";
+    background: linear-gradient(rgba(255, 0, 76, 0.8), rgba(253, 238, 20, 0.8));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+</style>
