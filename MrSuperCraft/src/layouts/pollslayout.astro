@@ -1,0 +1,35 @@
+---
+import NavbarElement from "../components/NavbarElement.astro";
+import Polls from "../components/Polls.astro";
+---
+
+<style>
+  .pollsdiv {
+    width: 80%;
+  }
+
+  @media (max-width: 450px) {
+    .pollsdiv {
+      width: 90%;
+    }
+  }
+</style>
+
+<NavbarElement />
+<div class="min-h-screen h-full flex items-center justify-center relative">
+  <img
+    src="../images/Website3-1200px.webp"
+    alt="Your Image"
+    class="w-full h-full object-cover filter blur-sm"
+    style="position: absolute; z-index: -1;"
+  />
+
+  <!-- Your content goes here -->
+  <div
+    class="pollsdiv dark:bg-slate-900 dark:text-white transition-all duration-500 ease-in-out delay-300 static flex items-center justify-center w-full mt-40 mb-20 flex-col bg-white shadow-2xl p-8 rounded-md max-sm:w-90 sm:w-80 md:w-80 lg:w-70"
+    data-aos="fade-up"
+    data-aos-duration="800"
+  >
+    <Polls />
+  </div>
+</div>
