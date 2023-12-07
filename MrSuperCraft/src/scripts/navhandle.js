@@ -1,16 +1,30 @@
-// updateNavLinks.js
+// navhandle.js
 
 const pageConfigs = {
     'HomePage': {
         refs: [
-            { ref0: '#Home', ref1: '#AboutMe', ref2: '#Discography', ref3: '#Releases', ref4: '#Stream' },
+            './', '#Home', '#AboutMe', '#Discography', '/contact/', '#Stream'
             // Add more refs as needed
         ],
         selector: '.nav', // Adjust the selector based on your HTML structure
     },
     'AboutMePage': {
         refs: [
-            { ref0: '/', ref1: '/', ref2: '/about-me/', ref3: '/discography/', ref4: '/releases/' },
+            '../', '../', '/about-me/', '/discography/', '/contact/', '/stream/'
+            // Add more refs as needed
+        ],
+        selector: '.nav', // Adjust the selector based on your HTML structure
+    },
+    'DiscographyPage': {
+        refs: [
+            './', '/about-me/', '/discography', '/contact', '/stream'
+            // Add more refs as needed
+        ],
+        selector: '.nav', // Adjust the selector based on your HTML structure
+    },
+    'ContactPage': {
+        refs: [
+            '../', '../', '/about-me/', '/discography/', './', '/stream/'
             // Add more refs as needed
         ],
         selector: '.nav', // Adjust the selector based on your HTML structure
@@ -28,27 +42,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const nav = document.querySelectorAll(pageConfig.selector);
 
         // Loop through each nav element
-        nav.forEach(function (navElement, navIndex) {
-            // Get the corresponding reference data
-            const refData = pageConfig.refs[navIndex];
+        nav.forEach(function (navElement) {
+            // Get all anchor links inside the current nav element
+            const navLinks = navElement.querySelectorAll('a');
 
-            // Check if reference data exists
-            if (refData) {
-                // Get all anchor links inside the current nav element
-                const navLinks = navElement.querySelectorAll('a');
-
-                // Loop through each link and update the href attribute
-                navLinks.forEach(function (navLink, linkIndex) {
-                    // Get the corresponding reference key (ref0, ref1, ...)
-                    const refKey = 'ref' + linkIndex;
-
-                    // Check if the refKey exists in the reference data
-                    if (refKey in refData) {
-                        // Update the href attribute with the corresponding reference value
-                        navLink.href = refData[refKey];
-                    }
-                });
-            }
+            // Loop through each link and update the href attribute
+            navLinks.forEach(function (navLink, linkIndex) {
+                // Check if the linkIndex exists in the reference data
+                if (linkIndex < pageConfig.refs.length) {
+                    // Update the href attribute with the corresponding reference value
+                    navLink.href = pageConfig.refs[linkIndex];
+                }
+            });
         });
     }
 });
