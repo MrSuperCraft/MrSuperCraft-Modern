@@ -1,0 +1,128 @@
+---
+
+---
+
+<style>
+  .contactdiv {
+    width: 80%;
+  }
+
+  @media (max-width: 450px) {
+    .contactdiv {
+      width: 90%;
+    }
+    .contact-title {
+      font-size: 1.5rem;
+      line-height: 3rem;
+    }
+  }
+  .tooltip {
+    position: absolute;
+    bottom: -60px; /* Adjust this value for the desired spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center; /* Center the text */
+    padding: 8px; /* Add padding for better visibility */
+    max-width: 150px; /* Set a max width to prevent overflowing */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide any overflow */
+    text-overflow: ellipsis; /* Show ellipsis for long text */
+  }
+
+  .dark-mode .tooltip {
+    background-color: #1a202c; /* Dark mode background color */
+    color: #cbd5e0; /* Dark mode text color */
+  }
+
+  .group:hover .tooltip {
+    opacity: 1;
+  }
+</style>
+
+<div class="min-h-screen h-full flex items-center justify-center relative">
+  <img
+    src="../images/Website3-1200px.webp"
+    alt="Your Image"
+    class="w-full h-full object-cover filter blur-sm"
+    style="position: absolute; z-index: -1;"
+  />
+
+  <!-- Your content goes here -->
+  <div
+    class="contactdiv dark:bg-slate-900 dark:text-white transition-all duration-500 ease-in-out delay-300 static flex items-center justify-center w-full mt-30 mb-20 flex-col bg-white shadow-2xl p-8 rounded-md max-sm:w-90 sm:w-80 md:w-80 lg:w-70"
+    data-aos="fade-up"
+    data-aos-duration="800"
+  >
+    <h1
+      class="transition-all duration-500 ease-in-out ampagetitle max-sm:line-clamp-1 max-sm:whitespace-nowrap text-3xl md:text-5xl font-patrick mt-6 md:mt-10 mb-6 md:mb-10 text-center md:max-w-2xl lg:max-w-3xl"
+    >
+      📞 Contact - Get In Touch 🤙
+    </h1>
+    <p
+      class="transition-all duration-500 ease-in-out dark:text-white text-black text-center text-lg sm:text-xl md:text-2xl max-sm:w-full sm:w-2/3"
+    >
+      Use these platforms for contact regarding collaboration and business
+      inquiries. <br />
+       If you have any feedback or want to share your thoughts on a song, feel
+      free to send me a message over on Discord or Instagram 🙂
+    </p>
+    <div class="flex justify-between items-center mt-10 mb-10">
+      <a href="https://discord.com/users/639475865578635279" target="_blank">
+        <div class="relative mx-3 me:mx-7 group">
+          <div
+            class="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 overflow-hidden rounded-full transition-transform transform hover:scale-110 border-2 border-black dark:border-none"
+          >
+            <img
+              src="/images/discord-icon.png"
+              alt="discord-icon"
+              class="object-cover overflow-hidden"
+            />
+          </div>
+          <div
+            class="text-white tooltip text-lg bg-slate-700 dark:bg-slate-400 rounded-md"
+          >
+            Discord
+          </div>
+        </div>
+      </a>
+
+      <a target="_blank" href="https://www.instagram.com/mrsupercraft">
+        <div class="relative mx-3 md:mx-7 group">
+          <div
+            class="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 overflow-hidden rounded-full transition-transform transform hover:scale-110 border-2 border-black dark:border-none flex items-center justify-center"
+            style="background-color: #FEE140;
+          background-image: linear-gradient(168deg, #FEE140 0%, rgb(253, 85, 136) 100%);
+          "
+          >
+            <i class="fa-brands fa-instagram text-5xl sm:6xl md:7xl lg:text-8xl"
+            ></i>
+          </div>
+          <div
+            class="text-white tooltip text-lg bg-slate-700 dark:bg-slate-400 rounded-md"
+          >
+            Instagram
+          </div>
+        </div>
+      </a>
+
+      <a href="mailto:mrsupercraft11@gmail.com">
+        <div class="relative mx-3 md:mx-7 group">
+          <div
+            class="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 overflow-hidden rounded-full transition-transform transform hover:scale-110 border-2 border-black dark:border-none flex items-center justify-center"
+            style="background-color: #0093E9; background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
+          >
+            <i class="fa-regular fa-envelope text-5xl sm:6xl md:7xl lg:text-8xl"
+            ></i>
+          </div>
+          <div
+            class="text-white tooltip text-lg bg-slate-700 dark:bg-slate-400 rounded-md"
+          >
+            Email
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
