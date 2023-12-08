@@ -1,6 +1,6 @@
 // Assuming you have your Spotify API credentials
-const clientId = import.meta.env.SPOTIFY_CLIENT_ID;
-const clientSecret = import.meta.env.SPOTIFY_CLIENT_SECRET;
+const SPOTIFY_CLIENT_ID = import.meta.env.PUBLIC_SPOTIFY_CLIENT_ID;
+const SPOTIFY_CLIENT_SECRET = import.meta.env.PUBLIC_SPOTIFY_CLIENT_SECRET;
 
 // Authenticate and get the access token
 const authenticate = async () => {
@@ -8,7 +8,7 @@ const authenticate = async () => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
-      'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
+      'Authorization': 'Basic ' + btoa(SPOTIFY_CLIENT_ID + ':' + SPOTIFY_CLIENT_SECRET),
     },
     body: 'grant_type=client_credentials',
   });
@@ -35,8 +35,8 @@ const fetchDiscography = async (token, artistId) => {
 const main = async () => {
   try {
     const token = await authenticate();
-    const artistURI = 'spotify:artist:1tEFFbxotubUSWVUqCowki';
-    const artistId = artistURI.split(':artist:')[1];
+    const ARTIST_URI = 'spotify:artist:1tEFFbxotubUSWVUqCowki';
+    const artistId = ARTIST_URI.split(':artist:')[1];
     const discography = await fetchDiscography(token, artistId);
     console.log('Discography:', discography); // Log the discography data
     renderResults(discography);
@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
 const songlistDiv = document.getElementById('songlist');
 
 const renderResults = (discography) => {
-  console.log('Rendering discography:', discography);
   songlistDiv.innerHTML = ''; // Clear existing content
 
   if (discography && discography.length > 0) {
@@ -70,7 +69,6 @@ const renderResults = (discography) => {
     songlistDiv.appendChild(releasesContainer);
 
     discography.forEach(item => {
-      console.log('Processing item:', item);
       if (item) {
         const albumName = item.name;
         const artists = item.artists.map(artist => artist.name).join(', '); // Concatenate multiple artists
@@ -82,7 +80,7 @@ const renderResults = (discography) => {
         albumDiv.innerHTML = `
           <img src="${imageUrl}" alt="${albumName}" class="w-full h-full object-cover mb-2 rounded-md">
           <h2 class="text-lg font-semibold">${albumName}</h2>
-          <p>${artists}</p> <!-- Display concatenated artists --> <br> <p>Hello World</p>
+          <p>${artists}</p> <!-- Display concatenated artists -->
         `;
         
         releasesContainer.appendChild(albumDiv);
@@ -92,5 +90,9 @@ const renderResults = (discography) => {
     });
   } else {
     console.error('Invalid or empty discography:', discography);
+    const errDiv = document.createElement('div');
+    errDiv.innerHTML = `<p class="flex self-center bold text-xl text-center">Error 404<p>`
+
+    songlistDiv.appendChild(errDiv);
   }
 };
