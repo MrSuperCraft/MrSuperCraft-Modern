@@ -1,0 +1,61 @@
+---
+
+---
+
+<style>
+  .ampagediv {
+    width: 80%;
+  }
+
+  @media (max-width: 450px) {
+    .ampagediv {
+      width: 90%;
+    }
+    .ampagetitle {
+      font-size: 1.5rem;
+      line-height: 3rem;
+    }
+  }
+  .tooltip {
+    position: absolute;
+    bottom: -60px; /* Adjust this value for the desired spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center; /* Center the text */
+    padding: 8px; /* Add padding for better visibility */
+    max-width: 150px; /* Set a max width to prevent overflowing */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide any overflow */
+    text-overflow: ellipsis; /* Show ellipsis for long text */
+  }
+
+  .dark-mode .tooltip {
+    background-color: #1a202c; /* Dark mode background color */
+    color: #cbd5e0; /* Dark mode text color */
+  }
+
+  .group:hover .tooltip {
+    opacity: 1;
+  }
+</style>
+
+<div class="min-h-screen h-full flex items-center justify-center relative">
+  <img
+    src="../images/Website3-1200px.webp"
+    alt="Your Image"
+    class="w-full h-full object-cover filter blur-sm"
+    style="position: absolute; z-index: -1;"
+  />
+  <div
+    class="ampagediv dark:bg-slate-900 dark:text-white transition-all duration-500 ease-in-out delay-300 static flex items-center justify-center w-full mt-40 mb-20 flex-col bg-white shadow-2xl p-8 rounded-md max-sm:w-90 sm:w-80 md:w-80 lg:w-70"
+    data-aos="fade-up"
+    data-aos-duration="800"
+  >
+    <div id="songlist" class="container flex items-center
+     mx-auto mt-8">
+      <!-- This is where the dynamically created content will go -->
+    </div>
+  </div>
+</div>
