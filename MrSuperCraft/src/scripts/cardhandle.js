@@ -82,7 +82,7 @@ const renderResults = (discography) => {
         albumDiv.innerHTML = `
           <img src="${imageUrl}" alt="${albumName}" class="w-full h-full object-cover mb-2 rounded-md">
           <h2 class="text-lg font-semibold">${albumName}</h2>
-          <p>${artists}</p> <!-- Display concatenated artists -->
+          <p>${artists}</p> <!-- Display concatenated artists --> <br> <p>Hello World</p>
         `;
         
         releasesContainer.appendChild(albumDiv);
