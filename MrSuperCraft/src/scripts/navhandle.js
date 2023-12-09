@@ -17,7 +17,7 @@ const pageConfigs = {
     },
     'DiscographyPage': {
         refs: [
-            './', '/about-me/', '/discography', '/contact', '/stream'
+            '../', '../', '/about-me/', '/discography', '/contact' , '/stream/'
             // Add more refs as needed
         ],
         selector: '.nav', // Adjust the selector based on your HTML structure

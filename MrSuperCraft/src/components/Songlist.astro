@@ -49,13 +49,29 @@
     style="position: absolute; z-index: -1;"
   />
   <div
-    class="ampagediv dark:bg-slate-900 dark:text-white transition-all duration-500 ease-in-out delay-300 static flex items-center justify-center w-full mt-40 mb-20 flex-col bg-white shadow-2xl p-8 rounded-md max-sm:w-90 sm:w-80 md:w-80 lg:w-70"
+    class="ampagediv dark:bg-slate-900 dark:text-white transition-all duration-500 dark:transition-all ease-in-out static flex items-center justify-center w-full mt-40 mb-20 flex-col bg-white shadow-2xl p-8 rounded-md max-sm:w-90 sm:w-80 md:w-80 lg:w-70"
     data-aos="fade-up"
     data-aos-duration="800"
   >
     <div id="songlist" class="container flex items-center
      mx-auto mt-8">
       <!-- This is where the dynamically created content will go -->
+    </div>
+  </div>
+  <div
+    id="myModal"
+    class="modal hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center flex-col"
+  >
+    <div class="modal-content bg-white p-6 rounded-md max-w-md">
+      <span class="close absolute top-4 right-4 text-gray-600 cursor-pointer"
+        >&times;</span
+      >
+      <div id="modalContent"></div>
+    </div>
+    <div>
+      <p class="text-white text-xl font-semibold p-3">
+        Click anywhere to close.
+      </p>
     </div>
   </div>
 </div>
