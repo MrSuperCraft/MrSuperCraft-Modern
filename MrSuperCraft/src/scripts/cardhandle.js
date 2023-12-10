@@ -204,8 +204,8 @@ const openModal = (item) => {
   content.innerHTML = `
     <img src="${item.images[0].url}" alt="${item.name}" class="w-full h-full object-cover mb-2 rounded-md">
     <h2 class="text-lg font-semibold">${albumType}: ${item.name}</h2>
-    <p class="text-gray-600">${item.artists.map(artist => artist.name).join(', ')}</p>
-    <p class="text-gray-600 mb-3">Release Date: ${releaseDate}</p>
+    <p class="text-gray-600 dark:text-white">${item.artists.map(artist => artist.name).join(', ')}</p>
+    <p class="text-gray-600 mb-3 dark:text-white">Release Date: ${releaseDate}</p>
     <a href=${item.external_urls.spotify} target="_blank" class="mx-auto">
       <button
         class="bg-green-500 mx-auto px-4 py-2 rounded-md text-white cursor-pointer transition duration-500 ease-in-out group hover:bg-white hover:text-black"
@@ -218,7 +218,7 @@ const openModal = (item) => {
       </button>
     </a>
     <div class="mt-4 text-center mb-2">
-      <span class="mr-2 text-gray-600">Share Link:</span>
+      <span class="mr-2 text-gray-600 dark:text-white">Share Link:</span>
       <button
         id="copyLinkBtn"
         class="bg-blue-500 px-3 py-1 rounded-md text-white cursor-pointer transition duration-500 ease-in-out hover:bg-white hover:text-blue-500"
@@ -275,16 +275,36 @@ const openModal = (item) => {
 
   modal.querySelector('#copyLinkBtn').addEventListener('click', () => {
     const shareableLink = `${baseURL}/discography?releaseId=${item.id}`;
-    copyToClipboard(shareableLink);
+    copyToClipboardWithTooltip(shareableLink);
   });
 };
 
-async function copyToClipboard(text) {
+async function copyToClipboardWithTooltip(text) {
   try {
     await navigator.clipboard.writeText(text);
-    alert('Link copied to clipboard!');
+    const snackbar = document.getElementById("snackbar");
+
+    // Add dynamic text to the snackbar
+    const successMessage = "Link copied successfully!";
+    snackbar.textContent = successMessage;
+
+    // Add the "show" class to DIV
+    snackbar.classList.add("show");
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(() => {
+      snackbar.classList.remove("show");
+    }, 3000);
   } catch (err) {
-    console.error('Unable to copy to clipboard', err);
-    alert('Failed to copy link to clipboard. You can manually copy it.');
+    const errorMessage = "Failed to copy link. Copy it manually.";
+    snackbar.textContent = errorMessage;
+
+    // Add the "show" class to DIV with error styling
+    snackbar.classList.add("show", "error");
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(() => {
+      snackbar.classList.remove("show", "error");
+    }, 3000);
   }
 }

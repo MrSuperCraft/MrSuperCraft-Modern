@@ -155,4 +155,14 @@ export const releases = [
       'https://music.amazon.com/albums/B0CDSQHC1R?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_vocUqcGZ4K23j8bDrqR8NyGrB',
   ],
 },
+{
+  title: "Winter Wonders",
+  coverImage: '../images/coverart/Winter Wonders.png',
+  links: [
+      'https://open.spotify.com/track/6RZlznhgkumg4gc1vPbLQH?si=8b491a5ff8164d5a',
+      'https://music.apple.com/il/album/winter-wonders/1661472206?i=1661472207',
+      'https://youtu.be/5XIhPjTXSJA?si=MN3HSE8RqNJX_0sM',
+      'https://music.amazon.com/albums/B0BR2QZXTX?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_sxkUXdUGGZbDBi7Zoy5ycUYjs',
+  ],
+},
 ];

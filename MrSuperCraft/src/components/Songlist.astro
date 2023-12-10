@@ -39,9 +39,143 @@
   .group:hover .tooltip {
     opacity: 1;
   }
+
+  /* The snackbar - position it at the bottom and in the middle of the screen */
+  #snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background: linear-gradient(90deg, #25ad42 0%, #92fe9d 100%);
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 10px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 70px; /* 70px from the bottom */
+    padding: 5px;
+  }
+
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+    -webkit-animation:
+      fadein 0.5s,
+      fadeout 0.5s 2.5s;
+    animation:
+      fadein 0.5s,
+      fadeout 0.5s 2.5s;
+  }
+
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+    to {
+      bottom: 70px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadein {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+    to {
+      bottom: 70px;
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeout {
+    from {
+      bottom: 70px;
+      opacity: 1;
+    }
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeout {
+    from {
+      bottom: 70px;
+      opacity: 1;
+    }
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    /* Animations to fade the snackbar in and out */
+    @-webkit-keyframes fadein {
+      from {
+        bottom: 0;
+        opacity: 0;
+      }
+      to {
+        bottom: 20px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadein {
+      from {
+        bottom: 0;
+        opacity: 0;
+      }
+      to {
+        bottom: 20px;
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeout {
+      from {
+        bottom: 20px;
+        opacity: 1;
+      }
+      to {
+        bottom: 0;
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeout {
+      from {
+        bottom: 20px;
+        opacity: 1;
+      }
+      to {
+        bottom: 0;
+        opacity: 0;
+      }
+    }
+
+    #snackbar {
+      bottom: 20px;
+    }
+  }
+
+  .error {
+    background-color: #ff0000; /* Red background for errors */
+    color: white;
+  }
 </style>
 
-<div class="min-h-screen h-full flex items-center justify-center relative">
+<div
+  class="min-h-screen h-full flex items-center justify-center relative"
+  id="bg"
+>
   <img
     src="../images/Website3-1200px.webp"
     alt="Your Image"
@@ -62,16 +196,19 @@
     id="myModal"
     class="modal hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center flex-col"
   >
-    <div class="modal-content bg-white p-6 rounded-md max-w-md">
+    <div
+      class="modal-content bg-white p-6 rounded-md max-w-md md:w-1/2 max-md:w-11/12 mt-14 md:mt-6 dark:bg-gray-800 dark:text-white"
+    >
       <span class="close absolute top-4 right-4 text-gray-600 cursor-pointer"
         >&times;</span
       >
-      <div id="modalContent"></div>
+      <div id="modalContent" class="dark:text-white"></div>
     </div>
     <div>
       <p class="text-white text-xl font-semibold p-3">
         Click anywhere to close.
       </p>
     </div>
+    <div id="snackbar" class="snackbar"></div>
   </div>
 </div>
